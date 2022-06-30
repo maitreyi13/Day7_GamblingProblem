@@ -2,7 +2,7 @@ public class GamblingProblem {
     static int everydayStake=100;
     static int everygameBet=1;
     static int finalAmount=0;
-    
+
     public static void main(String[] args){
         for (int i=1; i<=20; i++){
             int cashInHand = everydayStake;
@@ -33,6 +33,11 @@ public class GamblingProblem {
             }
             if (cashInHand == 50 || cashInHand == 150){
                 System.out.println("Player has resigned for the day "+i);
+            }
+            if (cashInHand == 50){
+                System.out.println("**** Player has lost by 50 for day "+i+" ****");
+            } else if (cashInHand == 150) {
+                System.out.println("**** Player has won by 150 for day "+i+" ****");
             }
             finalAmount = finalAmount + cashInHand;
         }
